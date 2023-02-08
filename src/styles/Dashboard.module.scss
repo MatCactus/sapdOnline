@@ -1,0 +1,147 @@
+.dashboardContainer {
+
+  & > p {
+    font-size: 32px;
+    margin: 0 0 24px 0;
+    color: #282c34;
+  }
+
+  & .dashboardContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & .dashboardContentLeft {
+      margin-left: 64px;
+      position: relative;
+
+      & .addButton {
+        position: absolute;
+        background: #5b6379;
+        right: -35px;
+        top: -10px;
+      }
+
+      & > p {
+        color: #282c34;
+        font-size: 28px;
+        margin: 0;
+      }
+      & .newsContainer {
+        -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        overflow-y: auto;
+        max-height: 65px;
+        width: 25vw;
+        background: white;
+        border-radius: 12px;
+        min-height: 65vh;
+        padding: 12px;
+        & .news {
+          background: #e6e6e6;
+          border-radius: 12px;
+          margin-bottom: 12px;
+          & .newsHead{
+            border-bottom: white 1px solid;
+            & > p {
+              padding: 12px;
+              font-size: 18px;
+              margin: 0;
+            }
+          }
+          & .newsBody{
+            & > p {
+              padding: 12px;
+              font-size: 14px;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    & .dashboardContentMiddle {
+      margin-top: 10em;
+
+      & > p {
+        text-align: center;
+        color: #282c34;
+        font-size: 28px;
+        margin: 0 0 8px 0;
+      }
+
+      & .dashboardContentMiddleContainer{
+        border-radius: 8px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        background: white;
+        width: 30vw;
+        padding: 8px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 24px;
+
+        & > .imgContainer {
+          & > img {
+            border-radius: 100%;
+            width: 100px;
+          }
+        }
+      }
+    }
+
+    & .dashboardContentRight {
+      margin-right: 64px;
+      position: relative;
+
+      & .addButton {
+        position: absolute;
+        background: #5b6379;
+        right: -35px;
+        top: -10px;
+      }
+
+      & > p {
+        color: #282c34;
+        font-size: 28px;
+        margin: 0;
+      }
+      & .ressourcesContainer {
+        -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        overflow-y: auto;
+        max-height: 65px;
+        width: 25vw;
+        background: white;
+        border-radius: 12px;
+        min-height: 65vh;
+        padding: 12px;
+        & .ressource {
+          background: #e6e6e6;
+          border-radius: 12px;
+          margin-bottom: 12px;
+          & .ressourceHead{
+            border-bottom: white 1px solid;
+            & > p {
+              padding: 12px;
+              font-size: 18px;
+              margin: 0;
+            }
+          }
+          & .ressourceBody{
+            & > p {
+              padding: 12px;
+              font-size: 14px;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
