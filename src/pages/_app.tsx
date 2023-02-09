@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import NavBar from "../component/navBar";

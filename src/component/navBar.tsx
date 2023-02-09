@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import NavBarButton from "./navBarButton";
 
 export default function NavBar(props: any) {

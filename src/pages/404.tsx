@@ -16,7 +16,7 @@ export default function PageNotFound() {
     return (
         <div className="h-full w-full">
             <div>
-                <Banner title="PAGE INTROUVABLE" logo={Logo} />
+                <Banner logo={Logo}>Page Introuvable</Banner>
             </div>
             <div className="fixed w-full flex flex-col justify-center items-center text-lspd text-2xl font-semibold bottom-44">
                 Vous allez être redigé vers la page d'accueil dans {counter}{" "}

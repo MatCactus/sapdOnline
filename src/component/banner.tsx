@@ -1,6 +1,6 @@
-import Image, { StaticImageData } from "next/image"
+import Image, { StaticImageData } from "next/image";
 
-export default function Banner(props: { title: string, logo: StaticImageData }) {
+export default function Banner(props: { children: string, logo: StaticImageData }) {
     return (
         <div className="flex h-full w-full justify-center items-center my-auto select-none">
             <div className="absolute w-2/4 h-10 md:h-32 m-auto l-0 r-0  shadow-box z-10">
@@ -8,7 +8,7 @@ export default function Banner(props: { title: string, logo: StaticImageData }) 
                     <div className="w-1/4 h-full rounded-l-xl" style={{
                         background: "linear-gradient(90deg, rgba(11,29,40,0) 0%, rgba(11,29,40,0.5) 100%)"
                     }} />
-                    <div className="w-2/4 bg-sapd bg-opacity-50 flex justify-center items-center text-xs md:text-3xl font-lspd text-white tracking-wider uppercase">{props.title}</div>
+                    <div className="w-2/4 bg-sapd bg-opacity-50 flex justify-center items-center text-xs md:text-3xl font-lspd text-white tracking-wider uppercase">{props.children}</div>
                     <div className="w-1/4 h-full rounded-r-xl" style={{
                         background: "linear-gradient(90deg, rgba(11,29,40,0.5) 0%, rgba(11,29,40,0) 100%)"
                     }} />
