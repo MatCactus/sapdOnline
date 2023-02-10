@@ -8,6 +8,8 @@ export default function NavBar(props: any) {
             initial={{ x: "-5rem" }}
             animate={{ x: 0 }}
             transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+            exit={{ x: "-5rem" }}
+            key="navBar"
         >
             <div className="flex h-full w-full flex-col items-center justify-between py-10 text-yellow-50">
                 <div className="flex flex-col items-center gap-y-11 h-2/5">
@@ -19,7 +21,7 @@ export default function NavBar(props: any) {
                     </NavBarButton>
                 </div>
                 <div className="flex flex-col justify-end items-center gap-y-11 h-3/5">
-                    <NavBarButton>
+                    <NavBarButton pagePath="/">
                         <i className="fas fa-gear fa-lg" />
                     </NavBarButton>
                     <NavBarButton pagePath="/login">
