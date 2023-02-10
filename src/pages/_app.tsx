@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
                 {displayNavBar &&
                     <motion.div
-                        className="ml-16 md:mx-16"
+                        className="ml-16 md:ml-16"
                         initial={{ y: "2rem", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.7 }}
