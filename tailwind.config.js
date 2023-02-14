@@ -7,8 +7,17 @@ module.exports = {
             height: {
                 'nav': "80vh"
             },
+            minHeight: {
+                'menu': '30rem',
+            },
+            maxHeight: {
+                'menu': '30rem',
+            },
             width: {
                 '15': "15rem"
+            },
+            minWidth: {
+                'menu': '30rem',
             },
             margin: {
                 '1/2': "50%"
