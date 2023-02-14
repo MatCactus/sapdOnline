@@ -33,6 +33,8 @@ export default function App({ Component, pageProps }: AppProps) {
                     {displayNavBar &&
                         <NavBar />
                     }
+                </AnimatePresence>
+                <AnimatePresence>
                     {displayHeader &&
                         <Header />
                     }
