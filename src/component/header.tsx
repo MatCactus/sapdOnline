@@ -6,7 +6,7 @@ import Logo from "../../public/sapd.png";
 export default function Header() {
     return (
         <motion.div
-            className={"p-3 px-6 flex flex-row justify-between items-center bg-lspd font-lspd"}
+            className={"p-3 px-6 flex flex-row justify-between items-center bg-lspd font-lspd fixed left-0 right-0 m-auto z-20"}
             initial={{ y: "-5rem" }}
             animate={{ y: 0 }}
             transition={{ delay: 0.3, duration: 0.6, type: "tween" }}

@@ -36,16 +36,24 @@ export default function App({ Component, pageProps }: AppProps) {
                 </AnimatePresence>
                 <AnimatePresence>
                     {displayHeader &&
-                        <Header />
+                        <motion.div
+                            className="pb-20"
+                            initial={{ y: "-5rem", paddingBottom: 0 }}
+                            animate={{ y: 0, paddingBottom: "5rem", transition: { delay: 1, duration: 0.6, type: "tween" } }}
+                            transition={{ delay: 0.4, duration: 0.6, type: "tween" }}
+                            exit={{ y: "-5rem", paddingBottom: 0 }}
+                        >
+                            <Header />
+                        </motion.div>
                     }
                 </AnimatePresence>
 
                 {displayNavBar &&
                     <motion.div
                         className="ml-9 md:ml-16"
-                        initial={{ y: "2rem", opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.7 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
                     >
                         <Component {...pageProps} />
                     </motion.div>
@@ -54,9 +62,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 {!displayNavBar &&
                     <motion.div
                         className="w-full h-full"
-                        initial={{ y: "2rem", opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.7 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
                     >
                         <Component {...pageProps} />
                     </motion.div>
