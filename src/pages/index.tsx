@@ -1,7 +1,7 @@
-import Image, { StaticImageData } from "next/image";
-import Logo from "../../public/sapd.png";
+import Image from "next/image";
 import LogoLSPD from "../../public/lspd.png";
 import LogoBCSO from "../../public/bcso.png";
+import Ltn74 from "../../public/ltn-74.jpg";
 import SlideShow from "../component/slideShow";
 import React from "react";
 
@@ -14,15 +14,8 @@ export default function Home() {
     }
 
     return (
-        <>
-            <div className={"p-2 flex flex-row justify-between items-center bg-lspd font-lspd"}>
-                <div className={"flex flex-row gap-3 items-center text-amber-50"}>
-                    <Image className="w-12 md:w-14" src={Logo} alt={"SAPD Logo"} />
-                    <p className="">San Andreas Police Departement</p>
-                </div>
-                <button className={"rounded-lg border-2 border-amber-50 p-8 py-0 h-8 text-amber-50 active:scale-95 text-amber-50"}>Connexion</button>
-            </div>
-            <SlideShow/>
+        <div className="bg-white h-full w-full">
+            <SlideShow />
 
             {/*V1*/}
 
@@ -34,25 +27,25 @@ export default function Home() {
                         <h3 className={"text-xl"}>Obey & Survive</h3>
                     </div>
                     <p>Chers citoyens de Los Santos,
-                        <br/><br/>
+                        <br /><br />
 
                         Le Département de police de Los Santos est à la recherche de nouveaux agents déterminés et compétents pour rejoindre notre équipe. Si vous êtes passionné par la justice et souhaitez faire une différence positive dans notre communauté, nous voulons vous entendre!
-                        <br/><br/>
+                        <br /><br />
                         En tant qu'agent de police de Los Santos, vous serez chargé de maintenir l'ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d'urgence en cas de besoin.
-                        <br/><br/>
+                        <br /><br />
                         Les critères pour devenir agent de police incluent:
-                        <br/><br/>
-                        Avoir au moins 21 ans<br/>
-                        Posséder un diplôme d'études secondaires<br/>
-                        Avoir une bonne conduite civique<br/>
-                        Avoir une forme physique adéquate pour accomplir les tâches requises<br/>
-                        Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br/>
-                        <br/>
+                        <br /><br />
+                        Avoir au moins 21 ans<br />
+                        Posséder un diplôme d'études secondaires<br />
+                        Avoir une bonne conduite civique<br />
+                        Avoir une forme physique adéquate pour accomplir les tâches requises<br />
+                        Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br />
+                        <br />
                         Sincèrement,
-                        <br/><br/>
+                        <br /><br />
                         Le Département de police de Los Santos</p>
                     <button className={"rounded-2xl border-2 border-neutral-600 p-8 py-0 h-8 text-amber-50 active:scale-95 text-black"}
-                        onClick={() => {togglePlateforme()}}
+                        onClick={() => { togglePlateforme() }}
                     >Rejoindre</button>
                 </div>
                 <div className={"mt-14 w-px bg-lspd"}></div>
@@ -63,22 +56,22 @@ export default function Home() {
                         <h3 className={"text-xl"}>Survey & Protect</h3>
                     </div>
                     <p>Chers citoyens de Los Santos,
-                        <br/><br/>
+                        <br /><br />
 
                         Le Département de police de Los Santos est à la recherche de nouveaux agents déterminés et compétents pour rejoindre notre équipe. Si vous êtes passionné par la justice et souhaitez faire une différence positive dans notre communauté, nous voulons vous entendre!
-                        <br/><br/>
+                        <br /><br />
                         En tant qu'agent de police de Los Santos, vous serez chargé de maintenir l'ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d'urgence en cas de besoin.
-                        <br/><br/>
+                        <br /><br />
                         Les critères pour devenir agent de police incluent:
-                        <br/><br/>
-                        Avoir au moins 21 ans<br/>
-                        Posséder un diplôme d'études secondaires<br/>
-                        Avoir une bonne conduite civique<br/>
-                        Avoir une forme physique adéquate pour accomplir les tâches requises<br/>
-                        Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br/>
-                        <br/>
+                        <br /><br />
+                        Avoir au moins 21 ans<br />
+                        Posséder un diplôme d'études secondaires<br />
+                        Avoir une bonne conduite civique<br />
+                        Avoir une forme physique adéquate pour accomplir les tâches requises<br />
+                        Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br />
+                        <br />
                         Sincèrement,
-                        <br/><br/>
+                        <br /><br />
                         Le Département de police de Los Santos</p>
                     <button className={"rounded-2xl border-2 border-neutral-600 p-8 py-0 h-8 text-amber-50 active:scale-95 text-black"}>Rejoindre</button>
                 </div>
@@ -148,23 +141,23 @@ export default function Home() {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <h1 className={"text-3xl my-12  font-semibold text-center"}>États-majors de San Andreas</h1>
-            <div className={"flex flex-row gap-8 justify-center"}>
-                <div className={"flex flex-row gap-8 w-1/3"}>
-                    <div className={"text-center text-lg font-semibold"}>
-                        <Image className={"rounded-full bg-gray-200"} src={LogoLSPD} alt={"LSPD Logo"} />
-                        <p className={"my-4"}>Chief 78</p>
+            <h1 className="text-3xl mt-20  font-semibold text-center">États-majors de San Andreas</h1>
+            <div className="flex flex-row gap-10 justify-center mt-8 mb-20">
+                <div className="flex flex-row gap-8 w-1/3">
+                    <div className="text-center text-lg font-semibold mt-10">
+                        <Image className="rounded-full bg-gray-200 w-60" src={LogoLSPD} alt={"LSPD Logo"} />
+                        <p className="my-4">M. MOSS Lewis</p>
                     </div>
-                    <div className={"text-center text-lg font-semibold"}>
-                        <Image className={"rounded-full bg-gray-200"} src={LogoLSPD} alt={"LSPD Logo"} />
-                        <p className={"my-4"}>Capitaine 12</p>
+                    <div className="text-center text-lg font-semibold">
+                        <Image className="rounded-full bg-gray-200 w-60" src={LogoLSPD} alt={"LSPD Logo"} />
+                        <p className="my-4">M. KYLE Jude</p>
                     </div>
-                    <div className={"text-center text-lg font-semibold"}>
-                        <Image className={"rounded-full bg-gray-200"} src={LogoLSPD} alt={"LSPD Logo"} />
-                        <p className={"my-4"}>Lieutenant 74</p>
+                    <div className="text-center text-lg font-semibold mt-10">
+                        <Image className="rounded-full bg-gray-200 w-60" src={Ltn74} alt={"LSPD Logo"} />
+                        <p className="my-4">M. MURPHY Wyatt</p>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

@@ -48,7 +48,7 @@ export default function NavBar(props: any) {
                     <NavBarButton pagePath="/profile">
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/login">
+                    <NavBarButton pagePath="/">
                         <i className="fa-solid fa-right-from-bracket fa-lg" />
                     </NavBarButton>
                 </div>
