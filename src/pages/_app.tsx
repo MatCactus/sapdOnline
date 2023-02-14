@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
 
     useEffect(() => {
-        if (["/dashboard"].includes(router.pathname))
+        if (["/dashboard", "/manual"].includes(router.pathname))
             setDisplayNavBar(true);
         else setDisplayNavBar(false);
     }, [router.route]);
@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Head>
                 <title>SAPD Online</title>
             </Head>
-            <div className="h-screen w-screen bg-creme">
+            <div className="h-full w-full bg-creme py-10">
                 <AnimatePresence>
                     {displayNavBar &&
                         <NavBar />
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
                 {displayNavBar &&
                     <motion.div
-                        className="ml-16 md:ml-16"
+                        className="ml-9 md:ml-16"
                         initial={{ y: "2rem", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.7 }}
@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
                 {!displayNavBar &&
                     <motion.div
-                        className="w-screen h-screen"
+                        className="w-screen h-full"
                         initial={{ y: "2rem", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.7 }}
@@ -49,7 +49,6 @@ export default function App({ Component, pageProps }: AppProps) {
                         <Component {...pageProps} />
                     </motion.div>
                 }
-
             </div>
         </>
     );
