@@ -52,7 +52,7 @@ export default function SlideShow() {
     };
 
     return (
-        <div className={"relative w-full h-80"}>
+        <div className={"relative w-full h-64 overflow-hidden"}>
             <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                     key={page}
@@ -62,7 +62,7 @@ export default function SlideShow() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    className={"absolute w-full h-80 object-cover overflow-hidden"}
+                    className={"absolute w-full h-80 object-cover"}
                     transition={{
                         x: { type: "spring", stiffness: 300, damping: 30 },
                         opacity: { duration: 0.2 }
@@ -81,11 +81,11 @@ export default function SlideShow() {
                     }}
                 />
             </AnimatePresence>
-            <div className="absolute text-white mx-4  z-10 inset-y-36 left-0" onClick={() => paginate(-1)}>
+            <div className="absolute text-white mx-4  z-10 inset-y-28 left-0" onClick={() => paginate(-1)}>
                 <i className="fa-solid fa-chevron-left"></i>
             </div>
 
-            <div className="absolute text-white mx-4 z-10 inset-y-36 right-0" onClick={() => paginate(1)}>
+            <div className="absolute text-white mx-4 z-10 inset-y-28 right-0" onClick={() => paginate(1)}>
                 <i className="fa-solid fa-chevron-right"></i>
             </div>
         </div>

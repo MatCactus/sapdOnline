@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Head>
                 <title>SAPD Online</title>
             </Head>
-            <div className="h-screen w-screen bg-creme">
+            <div className="h-screen w-full">
                 <AnimatePresence>
                     {displayNavBar &&
                         <NavBar />
@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
                 {!displayNavBar &&
                     <motion.div
-                        className="w-screen h-screen"
+                        className="w-full h-screen"
                         initial={{ y: "2rem", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.7 }}
