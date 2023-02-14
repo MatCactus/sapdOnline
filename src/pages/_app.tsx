@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Head>
                 <title>SAPD Online</title>
             </Head>
-            <div className="h-full w-full bg-creme">
+            <div className="w-full min-h-screen bg-creme">
                 <AnimatePresence>
                     {displayNavBar &&
                         <NavBar />
