@@ -1,5 +1,3 @@
-import Image, { StaticImageData } from "next/image";
-
 export default function MenuItem(props: { children?: any, title?: string }) {
     return (
         <div className={"bg-lspd bg-opacity-40 rounded mb-2"}>

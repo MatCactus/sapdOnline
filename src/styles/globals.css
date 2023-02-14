@@ -7,3 +7,29 @@
 .font-lspd {
     font-family: "Oswald", sans-serif;
 }
+
+:root {
+    --primary: rgba(126, 126, 126, 0.541);
+    --secondary: #0B1D28;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+}
+  
+  /* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 15px;
+}
+  
+*::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 14px;
+    border: 2px solid white;
+}

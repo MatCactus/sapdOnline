@@ -1,10 +1,7 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import NavBarButton from "./navBarButton";
 
 export default function NavBar(props: any) {
-    const router = useRouter();
-
     return (
         <motion.nav
             className="fixed top-0 bottom-0 m-auto w-10 md:w-14 h-nav bg-sapd rounded-r-lg z-20 shadow-2xl shadow-black"

@@ -1,5 +1,3 @@
-import Image, { StaticImageData } from "next/image";
-
 export default function MenuBox(props: { children?: any, title?: string }) {
     return (
         <div className="w-full h-full flex justify-center">

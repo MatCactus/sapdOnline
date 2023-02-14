@@ -10,7 +10,7 @@ export default function Home() {
     let [showPlateforme, setShowPlateforme] = React.useState(false)
 
     function togglePlateforme() {
-        setShowPlateforme(showPlateforme = !showPlateforme)
+        setShowPlateforme(!showPlateforme)
     }
 
     return (
@@ -44,7 +44,7 @@ export default function Home() {
                         Sincèrement,
                         <br /><br />
                         Le Département de police de Los Santos</p>
-                    <button className={"rounded-2xl border-2 border-neutral-600 p-8 py-0 h-8 text-amber-50 active:scale-95 text-black"}
+                    <button className={"rounded-2xl border-2 border-neutral-600 p-8 py-0 h-8 active:scale-95 text-black"}
                         onClick={() => { togglePlateforme() }}
                     >Rejoindre</button>
                 </div>
@@ -73,7 +73,7 @@ export default function Home() {
                         Sincèrement,
                         <br /><br />
                         Le Département de police de Los Santos</p>
-                    <button className={"rounded-2xl border-2 border-neutral-600 p-8 py-0 h-8 text-amber-50 active:scale-95 text-black"}>Rejoindre</button>
+                    <button className={"rounded-2xl border-2 border-neutral-600 p-8 py-0 h-8 active:scale-95 text-black"}>Rejoindre</button>
                 </div>
             </div>
 
