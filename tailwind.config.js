@@ -28,7 +28,8 @@ module.exports = {
                 'creme': "#F1E9DE"
             },
             textColor: {
-                'creme': "#F1E9DE"
+                'creme': "#F1E9DE",
+                'sapd': "#0B1D28",
             }
         },
     },

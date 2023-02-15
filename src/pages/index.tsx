@@ -145,15 +145,15 @@ export default function Home() {
             <div className="flex flex-row gap-10 justify-center mt-8 mb-20">
                 <div className="flex flex-row gap-8 w-1/3">
                     <div className="text-center text-lg font-semibold mt-10">
-                        <Image className="rounded-full bg-gray-200 w-60" src={LogoLSPD} alt={"LSPD Logo"} />
+                        <Image className="rounded-full bg-gray-200 w-60 select-none" src={LogoLSPD} alt={"LSPD Logo"} />
                         <p className="my-4">M. MOSS Lewis</p>
                     </div>
                     <div className="text-center text-lg font-semibold">
-                        <Image className="rounded-full bg-gray-200 w-60" src={LogoLSPD} alt={"LSPD Logo"} />
+                        <Image className="rounded-full bg-gray-200 w-60 select-none" src={LogoLSPD} alt={"LSPD Logo"} />
                         <p className="my-4">M. KYLE Jude</p>
                     </div>
                     <div className="text-center text-lg font-semibold mt-10">
-                        <Image className="rounded-full bg-gray-200 w-60" src={Ltn74} alt={"LSPD Logo"} />
+                        <Image className="rounded-full bg-gray-200 w-60 select-none" src={Ltn74} alt={"LSPD Logo"} />
                         <p className="my-4">M. MURPHY Wyatt</p>
                     </div>
                 </div>

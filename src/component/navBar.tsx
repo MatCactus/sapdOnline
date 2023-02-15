@@ -25,7 +25,7 @@ export default function NavBar(props: any) {
                     <NavBarButton pagePath="/complaint">
                         <i className="fa-solid fa-file fa-lg" />
                     </NavBarButton>
-                    <NavBarButton target="_blank" pagePath="https://trello.com/b/qTbZMmvJ/dispatch-lspd-7life">
+                    <NavBarButton target="_blank" pagePath="https://trello.com/b/47gNKwnX/dispatch-lspd-7life">
                         <i className="fa-regular fa-map fa-lg" />
                     </NavBarButton>
                     <NavBarButton pagePath="/criminal-records">
