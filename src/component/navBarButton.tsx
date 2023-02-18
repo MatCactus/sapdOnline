@@ -1,10 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import Tooltip from "./tooltip";
 
-export default function NavBarButton(props: { children: JSX.Element, target?: string, pagePath: string, tooltip: string, onClick?: any }) {
+export default function NavBarButton(props: { children: JSX.Element, target?: string, pagePath: string, tooltip: string, onClick?: () => any }) {
     const router = useRouter()
     const [tooltipDisplayState, setTooltipDisplayState] = useState(false);
 
@@ -27,7 +27,7 @@ export default function NavBarButton(props: { children: JSX.Element, target?: st
                         <Tooltip>{props.tooltip}</Tooltip>
                     }
                 </AnimatePresence>
-                <a target={props.target} href={props.pagePath}  {...props.onClick ? props.onClick : ""}>{props.children}</a>
+                <a target={props.target} href={props.pagePath} onClick={props.onClick}>{props.children}</a>
             </motion.div >
         )
 
@@ -40,7 +40,7 @@ export default function NavBarButton(props: { children: JSX.Element, target?: st
             onMouseLeave={() => setTooltipDisplayState(false)}
             onClick={() => setTooltipDisplayState(false)}
         >
-            <Link href={props.pagePath} {...props.onClick ? props.onClick : ""}>{props.children}</Link>
+            <Link href={props.pagePath} onClick={props.onClick}>{props.children}</Link>
             <AnimatePresence>
                 {
                     tooltipDisplayState &&

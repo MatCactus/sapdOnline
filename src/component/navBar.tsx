@@ -1,16 +1,10 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import NavBarButton from "./navBarButton";
-import ToolTip from "./tooltip";
 
 export default function NavBar(props: any) {
-    // Je veut faire un tooltip sa sera plus simple pour les users prend moins de place et très utiles :)
-
-    // C'est à dire un tooltip ?
-
-    // Check discord
-
-    // Ah oui ok nice
+    const logOut = () => {
+        localStorage.removeItem("token");
+    }
 
     return (
         <motion.nav
@@ -55,7 +49,7 @@ export default function NavBar(props: any) {
                     <NavBarButton tooltip="Voir son profil" pagePath="/profile">
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>
-                    <NavBarButton tooltip="Se déconnecter" pagePath="/" onClick={localStorage.removeItem("token")}>
+                    <NavBarButton tooltip="Se déconnecter" pagePath="/" onClick={logOut}>
                         <i className="fa-solid fa-right-from-bracket fa-lg" />
                     </NavBarButton>
                 </div>
