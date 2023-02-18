@@ -1,7 +1,17 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import NavBarButton from "./navBarButton";
+import ToolTip from "./tooltip";
 
 export default function NavBar(props: any) {
+    // Je veut faire un tooltip sa sera plus simple pour les users prend moins de place et très utiles :)
+
+    // C'est à dire un tooltip ?
+
+    // Check discord
+
+    // Ah oui ok nice
+
     return (
         <motion.nav
             className="fixed top-0 bottom-0 m-auto w-10 md:w-14 h-nav bg-sapd rounded-r-lg z-20 shadow-2xl shadow-black"
@@ -13,39 +23,39 @@ export default function NavBar(props: any) {
         >
             <div className="flex h-full w-full flex-col items-center justify-between py-10 text-yellow-50">
                 <div className="flex flex-col items-center gap-y-6 md:gap-y-11 h-full">
-                    <NavBarButton pagePath="/dashboard">
+                    <NavBarButton tooltip="Tableau de Bord" pagePath="/dashboard">
                         <i className="fas fa-house fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/research-citizen">
+                    <NavBarButton tooltip="Recherche Citoyen" pagePath="/research-citizen">
                         <i className="fa-solid fa-magnifying-glass fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/census">
+                    <NavBarButton tooltip="Recensement Citoyen" pagePath="/census">
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/complaint">
+                    <NavBarButton tooltip="Déposition de Plainte" pagePath="/complaint">
                         <i className="fa-solid fa-file fa-lg" />
                     </NavBarButton>
-                    <NavBarButton target="_blank" pagePath="https://trello.com/b/47gNKwnX/dispatch-lspd-7life">
+                    <NavBarButton tooltip="Dispatch" target="_blank" pagePath="https://trello.com/b/47gNKwnX/dispatch-lspd-7life">
                         <i className="fa-regular fa-map fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/criminal-records">
+                    <NavBarButton tooltip="Casiers Judiciraire" pagePath="/criminal-records">
                         <i className="fa-regular fa-folder-open fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/report">
+                    <NavBarButton tooltip="Éditer un Rapport" pagePath="/report">
                         <i className="fa-regular fa-clipboard fa-lg" />
                     </NavBarButton>
-                    <NavBarButton target="_blank" pagePath="https://docs.google.com/spreadsheets/d/1fzqRlpxPR8dKqVmzsfuvDuI5Awniv_xrhv1ogqk2jrA/edit?usp=sharing">
+                    <NavBarButton tooltip="Lois" target="_blank" pagePath="https://docs.google.com/spreadsheets/d/1fzqRlpxPR8dKqVmzsfuvDuI5Awniv_xrhv1ogqk2jrA/edit?usp=sharing">
                         <i className="fa-solid fa-scale-unbalanced fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/manual">
+                    <NavBarButton tooltip="Documentation" pagePath="/manual">
                         <i className="fa-solid fa-book fa-lg" />
                     </NavBarButton>
                 </div>
                 <div className="flex flex-col justify-end items-center gap-y-6 md:gap-y-11 h-full">
-                    <NavBarButton pagePath="/profile">
+                    <NavBarButton tooltip="Voir son profil" pagePath="/profile">
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>
-                    <NavBarButton pagePath="/">
+                    <NavBarButton tooltip="Se déconnecter" pagePath="/">
                         <i className="fa-solid fa-right-from-bracket fa-lg" />
                     </NavBarButton>
                 </div>

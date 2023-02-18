@@ -5,7 +5,8 @@ module.exports = {
         fontFamily: {},
         extend: {
             height: {
-                'nav': "80vh"
+                'nav': "80vh",
+                'slide-show': "30vh"
             },
             minHeight: {
                 'menu': '30rem',
@@ -30,7 +31,7 @@ module.exports = {
             textColor: {
                 'creme': "#F1E9DE",
                 'sapd': "#0B1D28",
-            }
+            },
         },
     },
     plugins: [],

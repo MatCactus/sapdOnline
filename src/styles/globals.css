@@ -9,8 +9,8 @@
 }
 
 :root {
-    --primary: rgba(126, 126, 126, 0.541);
-    --secondary: #0B1D28;
+    --primary: rgba(126, 126, 126, 0.2);
+    --secondary: #1a3544;
 }
 
 /* Firefox */
@@ -31,5 +31,5 @@
 *::-webkit-scrollbar-thumb {
     background-color: var(--secondary);
     border-radius: 14px;
-    border: 2px solid white;
+    border: 1px solid white;
 }

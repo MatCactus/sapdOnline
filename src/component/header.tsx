@@ -1,16 +1,37 @@
 import Image from "next/image";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "../../public/sapd.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginPopUp from "./login";
+import Link from "next/link";
 
 export default function Header() {
     const [loginPopUp, setLoginPopUp] = useState(false);
+    const [isLogged, setIsLogged] = useState(false);
 
     const toggleLoginPopUp = (state?: boolean) => {
         setLoginPopUp(state == undefined ? !toggleLoginPopUp : state);
     }
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            if (isLogged)
+                return setIsLogged(false);
+            return;
+        }
+
+        fetch("/api/isLogged", { method: "GET", headers: { authorization: token } }).then(e => {
+            if (e.status != 200) {
+                if (isLogged)
+                    return setIsLogged(false);
+                return;
+            }
+
+            setIsLogged(true);
+        })
+
+    }, [isLogged])
 
     return (
         <motion.div
@@ -23,16 +44,25 @@ export default function Header() {
             <AnimatePresence>
                 {
                     loginPopUp &&
-                    <LoginPopUp toggleFunction={toggleLoginPopUp} />
+                    <LoginPopUp toggleFunction={toggleLoginPopUp} setLogStateFunction={setIsLogged} />
                 }
             </AnimatePresence>
-            <div className={"flex flex-row gap-3 items-center text-amber-50 select-none"}>
-                <Image className="w-12 md:w-14" src={Logo} alt={"SAPD Logo"} />
+            <motion.div
+                drag dragConstraints={{}}
+                className={"flex flex-row gap-3 items-center text-amber-50"}
+            >
+                <Image className="w-12 md:w-14 touch-none" src={Logo} alt={"SAPD Logo"} />
                 <p className="uppercase">San Andreas Police Departement</p>
-            </div>
+            </motion.div>
             {
-                !loginPopUp &&
-                <div className="rounded-lg border-2 border-amber-50 p-8 py-0 h-8 text-amber-50 active:scale-95 uppercase cursor-pointer" onClick={() => toggleLoginPopUp(true)}>Connexion</div>
+                !loginPopUp && !isLogged &&
+                <div className="rounded-full border border-amber-50 px-6 py-1 text-amber-50 active:scale-95 uppercase cursor-pointer" onClick={() => toggleLoginPopUp(true)}>Connexion</div>
+            }
+            {
+                !loginPopUp && isLogged &&
+                <Link href="/dashboard" className="rounded-full border border-amber-50 px-6 py-1 text-amber-50 active:scale-95 uppercase cursor-pointer">
+                    Tableau de Bord
+                </Link>
             }
         </motion.div>
     );

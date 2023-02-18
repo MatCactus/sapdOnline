@@ -55,24 +55,26 @@ export default function Home() {
                         <h2 className={"text-3xl"}>BCSO</h2>
                         <h3 className={"text-xl"}>Survey & Protect</h3>
                     </div>
-                    <p>Chers citoyens de Los Santos,
+                    <p>Bonjour à vous habitants de San Andreas et citoyens Américains,
+                        Le Blaine County Sheriff Office est actuellement ouvert aux recrutements.
                         <br /><br />
-
-                        Le Département de police de Los Santos est à la recherche de nouveaux agents déterminés et compétents pour rejoindre notre équipe. Si vous êtes passionné par la justice et souhaitez faire une différence positive dans notre communauté, nous voulons vous entendre!
+                        La culture du travail au sein du Blaine County Sheriff Office illustre cinq valeurs fondamentales : courage, loyauté, devoir, honnêteté et justice. Ces valeurs, et l’adage des Sheriff « Worthy of Trust and Confidence », trouvent écho chez tous les Américains qui ont juré de respecter ces principes.
                         <br /><br />
-                        En tant qu'agent de police de Los Santos, vous serez chargé de maintenir l'ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d'urgence en cas de besoin.
-                        <br /><br />
-                        Les critères pour devenir agent de police incluent:
-                        <br /><br />
-                        Avoir au moins 21 ans<br />
-                        Posséder un diplôme d'études secondaires<br />
-                        Avoir une bonne conduite civique<br />
-                        Avoir une forme physique adéquate pour accomplir les tâches requises<br />
-                        Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br />
+                        Les traits que nous recherchons:<br />
+                        - Excellente condition physique.<br />
+                        - Stabilité psychologique, sang froid.<br />
+                        - Dépistage anti drogues, divulguer toute consommation antérieure de drogues,<br />
+                        - La perte auditive, mesurée par un audiomètre, ne doit pas dépasser 25 décibels.<br />
+                        - Posséder une acuité visuelle corrigée d’au moins 20/20 pour chaque œil.<br />
+                        - Être âgé d’au moins 21 ans et de moins de 37 ans.<br />
                         <br />
-                        Sincèrement,
+                        Une carrière au sein du Blaine County Sheriff Office offre aux employés un ensemble complet d’avantages sociaux. En tant qu’employé de police, vous et votre famille aurez accès à une gamme d’avantages sociaux conçus pour rendre votre carrière de deputy très enrichissante.
                         <br /><br />
-                        Le Département de police de Los Santos</p>
+                        Bénéfices:<br />
+                        - Assurance maladie<br />
+                        - Comptes de dépenses flexibles, salaire variable.<br />
+                        <br />
+                        Explorez les nombreuses possibilités offertes par le Blaine County Sheriff Office.</p>
                     <button className={"rounded-2xl border-2 border-neutral-600 p-8 py-0 h-8 active:scale-95 text-black"}>Rejoindre</button>
                 </div>
             </div>
