@@ -18,6 +18,7 @@ export default function LoginPopUp(props: { toggleFunction: (state?: boolean) =>
 
             localStorage.setItem("token", token);
             props.setLogStateFunction(true);
+            props.toggleFunction(false);
         })
 
     }

@@ -43,7 +43,7 @@ export default function Header() {
         >
             <AnimatePresence>
                 {
-                    loginPopUp &&
+                    loginPopUp && !isLogged &&
                     <LoginPopUp toggleFunction={toggleLoginPopUp} setLogStateFunction={setIsLogged} />
                 }
             </AnimatePresence>
