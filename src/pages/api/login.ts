@@ -22,7 +22,7 @@ export default async function handler(
         return res.status(401).json({ message: "Bad Username or Password" });
 
     if (!(await bcrypt.compare(password, dbRes[0].passwd)))
-        return res.status(404).json({ message: "Bad Username or Password" });
+        return res.status(401).json({ message: "Bad Username or Password" });
 
     return res.status(200).json({ token: await genJWT(username, dbRes[0].passwd) });
 }
