@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<{ message: string } | any>
+    res: NextApiResponse<{ message: string }>
 ) {
     if (req.method != "GET")
         return res.status(405).json({ message: "Not allowed" });

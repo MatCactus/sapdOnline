@@ -13,3 +13,7 @@ export interface User {
 }
 
 export type Users = User[]
+
+export type LoginRes = { message: string } | { token: string };
+
+export type IsLoggedRes = { message: string };
