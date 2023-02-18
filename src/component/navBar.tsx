@@ -55,7 +55,7 @@ export default function NavBar(props: any) {
                     <NavBarButton tooltip="Voir son profil" pagePath="/profile">
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>
-                    <NavBarButton tooltip="Se déconnecter" pagePath="/">
+                    <NavBarButton tooltip="Se déconnecter" pagePath="/" onClick={localStorage.removeItem("token")}>
                         <i className="fa-solid fa-right-from-bracket fa-lg" />
                     </NavBarButton>
                 </div>
