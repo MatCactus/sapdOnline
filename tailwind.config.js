@@ -32,7 +32,8 @@ module.exports = {
                 'sapd': "#0B1D28",
                 'lspd': "#0f2940",
                 'creme': "#F1E9DE",
-                'bcso': "#617650"
+                'bcso': "#617650",
+                'cjs': "#133553",
             },
             textColor: {
                 'creme': "#F1E9DE",

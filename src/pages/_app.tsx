@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
 
     useEffect(() => {
-        if (["/dashboard", "/manual", "/users"].includes(router.pathname))
+        if (["/dashboard", "/manual", "/users", "/criminal-records"].includes(router.pathname))
             setDisplayNavBar(true);
         else setDisplayNavBar(false);
 

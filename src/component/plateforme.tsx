@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import Overlay from "./overlay";
 
 export default function Plateforme(props: { title: string, children: JSX.Element, type: "right" | "center" | "full", toggleFunction: (state?: boolean) => void }) {
@@ -39,7 +39,25 @@ export default function Plateforme(props: { title: string, children: JSX.Element
             );
         case "full":
             return (
-                <></>
+                <>
+                    <Overlay toggleFunction={props.toggleFunction}>
+                        <AnimatePresence>
+                            <motion.div
+                                initial={{ y: "100%" }}
+                                animate={{ y: 0 }}
+                                exit={{ y: "100%" }}
+                                transition={{ duration: 0.5 }}
+                                className="w-full h-full bg-lspd fixed top-0 right-0 z-30 text-white"
+                            >
+                                <p className="border-b-2 text-4xl p-4">{props.title}</p>
+                                <div>{props.children}</div>
+                                <i className={"fas fa-times text-4xl absolute top-5 right-5"}
+                                   onClick={() => props.toggleFunction()}
+                                ></i>
+                            </motion.div>
+                        </AnimatePresence>
+                    </Overlay>
+                </>
             );
     }
 }
