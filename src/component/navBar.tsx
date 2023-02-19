@@ -49,7 +49,7 @@ export default function NavBar(props: any) {
                         <i className="fa-solid fa-book fa-lg" />
                     </NavBarButton>
                     <NavBarButton tooltip="Gestion Utilisateurs" pagePath="/users">
-                        <i className="fa-solid fa-book fa-lg" />
+                        <i className="fa-solid fa-user-gear fa-lg" />
                     </NavBarButton>
                 </div>
                 <div className="flex flex-col justify-end items-center gap-y-6 md:gap-y-8 h-full">
