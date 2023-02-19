@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import DBConnect from './utils/DBConnection';
-import genHash from './utils/genHash';
+import isLogged from './utils/isLogged';
 const bcrypt = require("bcrypt");
 
 export default async function handler(
@@ -16,19 +15,12 @@ export default async function handler(
     if (!headers.authorization)
         return res.status(403).json({ message: "Not allowed" });
 
-    const [headerHash, creationDate, username] = headers.authorization.split(".");
+    const result = await isLogged(headers.authorization)
 
-    const userPasswdHash: { passwd: string }[] = await DBConnect(`SELECT passwd from users WHERE username = \"${username}\"`) as any;
+    if (typeof result == 'boolean')
+        return res.status(200).json({ message: "Connected!" });
 
-    if (userPasswdHash.length == 0)
-        return res.status(401).json({ message: "Invalid Username" })
-
-    const key = JSON.stringify({ dateOfCreation: parseInt(creationDate), username: username, passwordHash: userPasswdHash[0].passwd, privateKey: "q65s4d1;:-sdf+-fsd,s" });
-
-    if (await bcrypt.compare(key, headerHash.replace("$F$D54/", ".")) && (Date.now() - parseInt(creationDate)) <= 7 * 24 * 3600 * 1000)
-        return res.status(200).json({ message: "Connected" });
-
-    return res.status(401).json({ message: "Invalid Token" });
+    return res.status(result.httpCode).json({ message: result.message })
 }
 
 

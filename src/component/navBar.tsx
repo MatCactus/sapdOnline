@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import NavBarButton from "./navBarButton";
+import { useToasts } from "./toastManager";
 
 export default function NavBar(props: any) {
+    const createToasts = useToasts();
+
     const logOut = () => {
         localStorage.removeItem("token");
+        createToasts("Déconnecté !", "success")
     }
 
     return (
@@ -16,7 +20,7 @@ export default function NavBar(props: any) {
             key="navBar"
         >
             <div className="flex h-full w-full flex-col items-center justify-between py-10 text-yellow-50">
-                <div className="flex flex-col items-center gap-y-6 md:gap-y-11 h-full">
+                <div className="flex flex-col items-center gap-y-6 md:gap-y-8 h-full">
                     <NavBarButton tooltip="Tableau de Bord" pagePath="/dashboard">
                         <i className="fas fa-house fa-lg" />
                     </NavBarButton>
@@ -45,7 +49,7 @@ export default function NavBar(props: any) {
                         <i className="fa-solid fa-book fa-lg" />
                     </NavBarButton>
                 </div>
-                <div className="flex flex-col justify-end items-center gap-y-6 md:gap-y-11 h-full">
+                <div className="flex flex-col justify-end items-center gap-y-6 md:gap-y-8 h-full">
                     <NavBarButton tooltip="Voir son profil" pagePath="/profile">
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>

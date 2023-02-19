@@ -6,19 +6,24 @@ module.exports = {
         extend: {
             height: {
                 'nav': "80vh",
-                'slide-show': "30vh"
+                'slide-show': "30vh",
+                '0.75': "3px"
             },
             minHeight: {
-                'menu': '30rem',
+                'menu': '10rem',
             },
             maxHeight: {
-                'menu': '30rem',
+                'menu': '10rem',
             },
             width: {
                 '15': "15rem"
             },
             minWidth: {
-                'menu': '30rem',
+                'menu': '10rem',
+            },
+            maxWidth: {
+                'menu' : '80%',
+                'users' : '86%',
             },
             margin: {
                 '1/2': "50%"
@@ -31,6 +36,11 @@ module.exports = {
             textColor: {
                 'creme': "#F1E9DE",
                 'sapd': "#0B1D28",
+                'lspd': "#0f2940"
+            },
+            borderColor: {
+                'sapd': "#0B1D28",
+                'lspd': "#0f2940",
             },
         },
     },

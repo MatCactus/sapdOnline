@@ -8,3 +8,12 @@ export default async function genHash(username: string, passwordHash: string, da
 
     return hash.replace(".", "$F$D54/");
 }
+
+export async function genPasswordHash(password: string): Promise<string> {
+
+    const hash = await bcrypt.genSalt(10).then((salt: any) => {
+        return bcrypt.hash(password, salt);
+    });
+
+    return hash;
+}

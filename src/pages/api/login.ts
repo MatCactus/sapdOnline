@@ -26,10 +26,3 @@ export default async function handler(
 
     return res.status(200).json({ token: await genJWT(username, dbRes[0].passwd) });
 }
-
-
-/* Password Hasher
-    const hash = await bcrypt.genSalt(10).then((salt: any) => {
-        return bcrypt.hash("sjQv*q9jfnV%x&", salt);
-    });
-*/

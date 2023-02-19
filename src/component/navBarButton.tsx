@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import Tooltip from "./tooltip";
 
 export default function NavBarButton(props: { children: JSX.Element, target?: string, pagePath: string, tooltip: string, onClick?: () => any }) {

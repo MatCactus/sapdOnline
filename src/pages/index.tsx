@@ -7,7 +7,7 @@ import React from "react";
 
 
 export default function Home() {
-    let [showPlateforme, setShowPlateforme] = React.useState(false)
+    const [showPlateforme, setShowPlateforme] = React.useState(false)
 
     function togglePlateforme() {
         setShowPlateforme(!showPlateforme)
@@ -16,7 +16,6 @@ export default function Home() {
     return (
         <div className="bg-white h-full w-full">
             <SlideShow />
-
             {/*V1*/}
 
             <div className={"flex flex-row justify-between gap-16 font-lspd mx-72"}>

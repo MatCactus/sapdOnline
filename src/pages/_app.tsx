@@ -6,6 +6,8 @@ import "../styles/globals.css";
 import Head from "next/head";
 import NavBar from "../component/navBar";
 import Header from "../component/header";
+import ToastsManager from "../component/toastManager";
+import { RecoilRoot } from "recoil";
 
 export default function App({ Component, pageProps }: AppProps) {
     const [displayNavBar, setDisplayNavBar] = useState(true);
@@ -13,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
 
     useEffect(() => {
-        if (["/dashboard", "/manual"].includes(router.pathname))
+        if (["/dashboard", "/manual", "/users"].includes(router.pathname))
             setDisplayNavBar(true);
         else setDisplayNavBar(false);
 
@@ -24,11 +26,12 @@ export default function App({ Component, pageProps }: AppProps) {
     }, [router.route]);
 
     return (
-        <>
+        <RecoilRoot>
             <Head>
                 <title>SAPD Online</title>
             </Head>
             <div className="w-full min-h-screen bg-creme">
+                <ToastsManager />
                 <AnimatePresence>
                     {displayNavBar &&
                         <NavBar />
@@ -70,6 +73,6 @@ export default function App({ Component, pageProps }: AppProps) {
                     </motion.div>
                 }
             </div>
-        </>
+        </RecoilRoot>
     );
 }

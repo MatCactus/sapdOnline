@@ -2,25 +2,31 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import LogoSAPD from "../../public/sapd.png";
+import { useToasts } from "./toastManager";
 
 export default function LoginPopUp(props: { toggleFunction: (state?: boolean) => void, setLogStateFunction: (state: boolean) => void }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const createToasts = useToasts();
 
     const submit = (): void => {
-        if (!username || !password)
+        if (!username || !password) {
+            createToasts("Les champs Identifiants et Mot de Passe doivent être complétés", "error")
             return;
+        }
 
         fetch("/api/login", { method: "POST", body: JSON.stringify({ username: username, password: password }) }).then(async (res) => {
             const { message, token } = await res.json();
-            if (message || !token)
+            if (message || !token) {
+                createToasts("Identifiants Incorrectes", "error")
                 return;
+            }
 
             localStorage.setItem("token", token);
+            createToasts("Connecté !", "success")
             props.setLogStateFunction(true);
             props.toggleFunction(false);
         })
-
     }
 
     return (

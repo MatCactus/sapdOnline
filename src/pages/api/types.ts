@@ -17,3 +17,5 @@ export type Users = User[]
 export type LoginRes = { message: string } | { token: string };
 
 export type IsLoggedRes = { message: string };
+
+export type GetUsersRes = { active: boolean, dept: string, pp: string, pon: string, name: string, surname: string, rank: string, username: string }[];

@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 
-export default function Tooltip(props: { children: JSX.Element | string }) {
+export default function Tooltip(props: { children: JSX.Element | string, position?: MotionStyle }) {
 
 
     return (
@@ -9,7 +9,7 @@ export default function Tooltip(props: { children: JSX.Element | string }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.1 } }}
-            style={{ x: "2.7rem" }}
+            style={props.position ?? { x: "2.7rem" }}
         >
             {props.children}
         </ motion.div>
