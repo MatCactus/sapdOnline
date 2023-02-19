@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import DBConnect from './utils/DBConnection';
-import { genPasswordHash } from './utils/genHash';
 import isLogged from './utils/isLogged'
 
 export default async function handler(

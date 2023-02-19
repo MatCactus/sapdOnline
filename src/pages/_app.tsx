@@ -8,6 +8,7 @@ import NavBar from "../component/navBar";
 import Header from "../component/header";
 import ToastsManager from "../component/toastManager";
 import { RecoilRoot } from "recoil";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }: AppProps) {
     const [displayNavBar, setDisplayNavBar] = useState(true);
@@ -23,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
             setDisplayHeader(true);
         else setDisplayHeader(false);
 
-    }, [router.route]);
+    }, [router.route, router.pathname]);
 
     return (
         <RecoilRoot>
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <title>SAPD Online</title>
             </Head>
             <div className="w-full min-h-screen bg-creme">
+                <Script src="https://kit.fontawesome.com/9626785de0.js" crossOrigin="anonymous"></Script>
                 <ToastsManager />
                 <AnimatePresence>
                     {displayNavBar &&

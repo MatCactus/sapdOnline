@@ -23,26 +23,28 @@ export default function Dashboard() {
             <div className="flex flex-row gap-16 justify-center my-4">
                 <InfoBox title={`Nombre d'agent | ${usersCounts.dept}`} icon="fa-solid fa-shield" data={usersCounts.activeUsers} />
                 <InfoBox title="Nombre de casier judiciare" icon="fa-solid fa-folder-open" data={78} />
-                <InfoBox title="Nombre de plainte" icon="fa-solid fa-file" data={53} />
+                <InfoBox title="Nombre de plainte (active)" icon="fa-solid fa-file" data={53} />
             </div>
-            <div className="flex flex-col justify-center w-full mt-10">
-                <MenuBox title="News">
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                    <MenuItem title={"Information 08"}>Lorem .</MenuItem>
-                </MenuBox>
-                <MenuBox title="Ressources">
-                    <MenuItem title={"Trello"}>Lorem .</MenuItem>
-                    <MenuItem title={"Trello"}>Lorem .</MenuItem>
-                    <MenuItem title={"Trello"}>Lorem .</MenuItem>
-                    <MenuItem title={"Trello"}>Lorem .</MenuItem>
-                </MenuBox>
+            <div className="w-full h-fit flex justify-center items-center">
+                <div className="flex flex-row gap-16 mt-8 flex-wrap max-w-users justify-start">
+                    <MenuBox title="News" type="news">
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                        <MenuItem title={"Information 08"}>Lorem .</MenuItem>
+                    </MenuBox>
+                    <MenuBox title="Ressources" type="ressource">
+                        <MenuItem title={"Trello"}>Lorem .</MenuItem>
+                        <MenuItem title={"Trello"}>Lorem .</MenuItem>
+                        <MenuItem title={"Trello"}>Lorem .</MenuItem>
+                        <MenuItem title={"Trello"}>Lorem .</MenuItem>
+                    </MenuBox>
+                </div>
             </div>
         </>
     );

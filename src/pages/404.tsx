@@ -11,7 +11,7 @@ export default function PageNotFound() {
         setTimeout(() => setCounter(counter - 1), 1000);
 
         if (counter <= 0) router.push("/");
-    }, [counter]);
+    }, [counter, router]);
 
     return (
         <div className="h-full w-full">
@@ -19,7 +19,7 @@ export default function PageNotFound() {
                 <Banner logo={Logo}>Page Introuvable</Banner>
             </div>
             <div className="fixed w-full flex flex-col justify-center items-center text-lspd text-2xl font-semibold bottom-44">
-                Vous allez être redigé vers la page d'accueil dans {counter} seconde{counter > 1 ? "s" : ""}
+                Vous allez être redigé vers la page d&#3accueil dans {counter} seconde{counter > 1 ? "s" : ""}
             </div>
         </div>
     );

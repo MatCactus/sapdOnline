@@ -30,15 +30,15 @@ export default function Home() {
 
                         Le Département de police de Los Santos est à la recherche de nouveaux agents déterminés et compétents pour rejoindre notre équipe. Si vous êtes passionné par la justice et souhaitez faire une différence positive dans notre communauté, nous voulons vous entendre!
                         <br /><br />
-                        En tant qu'agent de police de Los Santos, vous serez chargé de maintenir l'ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d'urgence en cas de besoin.
+                        En tant qu&#3agent de police de Los Santos, vous serez chargé de maintenir l&#3ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d&#3urgence en cas de besoin.
                         <br /><br />
                         Les critères pour devenir agent de police incluent:
                         <br /><br />
                         Avoir au moins 21 ans<br />
-                        Posséder un diplôme d'études secondaires<br />
+                        Posséder un diplôme d&#3études secondaires<br />
                         Avoir une bonne conduite civique<br />
                         Avoir une forme physique adéquate pour accomplir les tâches requises<br />
-                        Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br />
+                        Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n&#3hésitez pas à postuler aujourd&#3hui!<br />
                         <br />
                         Sincèrement,
                         <br /><br />
@@ -94,15 +94,15 @@ export default function Home() {
 
             {/*            Le Département de police de Los Santos est à la recherche de nouveaux agents déterminés et compétents pour rejoindre notre équipe. Si vous êtes passionné par la justice et souhaitez faire une différence positive dans notre communauté, nous voulons vous entendre!*/}
             {/*            <br/><br/>*/}
-            {/*            En tant qu'agent de police de Los Santos, vous serez chargé de maintenir l'ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d'urgence en cas de besoin.*/}
+            {/*            En tant qu&#3agent de police de Los Santos, vous serez chargé de maintenir l&#3ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d&#3urgence en cas de besoin.*/}
             {/*            <br/><br/>*/}
             {/*            Les critères pour devenir agent de police incluent:*/}
             {/*            <br/><br/>*/}
             {/*            Avoir au moins 21 ans<br/>*/}
-            {/*            Posséder un diplôme d'études secondaires<br/>*/}
+            {/*            Posséder un diplôme d&#3études secondaires<br/>*/}
             {/*            Avoir une bonne conduite civique<br/>*/}
             {/*            Avoir une forme physique adéquate pour accomplir les tâches requises<br/>*/}
-            {/*            Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br/>*/}
+            {/*            Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n&#3hésitez pas à postuler aujourd&#3hui!<br/>*/}
             {/*            <br/>*/}
             {/*            Veuillez envoyer votre curriculum vitae et une lettre de motivation sur notre intranet en ouvrant un dossier de recrutement. Nous nous réjouissons de recevoir votre candidature et de vous aider à devenir un membre clé du Département de police de Los Santos.*/}
             {/*            <br/><br/>*/}
@@ -124,15 +124,15 @@ export default function Home() {
 
             {/*            Le Département de police de Los Santos est à la recherche de nouveaux agents déterminés et compétents pour rejoindre notre équipe. Si vous êtes passionné par la justice et souhaitez faire une différence positive dans notre communauté, nous voulons vous entendre!*/}
             {/*            <br/><br/>*/}
-            {/*            En tant qu'agent de police de Los Santos, vous serez chargé de maintenir l'ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d'urgence en cas de besoin.*/}
+            {/*            En tant qu&#3agent de police de Los Santos, vous serez chargé de maintenir l&#3ordre et la sécurité dans notre ville en veillant à ce que les lois soient respectées et en aidant les citoyens en besoin. Vous serez également appelé à résoudre les crimes, à enquêter sur les incendies criminels et à aider les unités d&#3urgence en cas de besoin.*/}
             {/*            <br/><br/>*/}
             {/*            Les critères pour devenir agent de police incluent:*/}
             {/*            <br/><br/>*/}
             {/*            Avoir au moins 21 ans<br/>*/}
-            {/*            Posséder un diplôme d'études secondaires<br/>*/}
+            {/*            Posséder un diplôme d&#3études secondaires<br/>*/}
             {/*            Avoir une bonne conduite civique<br/>*/}
             {/*            Avoir une forme physique adéquate pour accomplir les tâches requises<br/>*/}
-            {/*            Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n'hésitez pas à postuler aujourd'hui!<br/>*/}
+            {/*            Nous offrons des salaires compétitifs, des avantages sociaux, des opportunités de formation continue et des possibilités de progression de carrière à nos agents. Si vous êtes prêt à relever le défi et à servir notre communauté, n&#3hésitez pas à postuler aujourd&#3hui!<br/>*/}
             {/*            <br/>*/}
             {/*            Veuillez envoyer votre curriculum vitae et une lettre de motivation sur notre intranet en ouvrant un dossier de recrutement. Nous nous réjouissons de recevoir votre candidature et de vous aider à devenir un membre clé du Département de police de Los Santos.*/}
             {/*            <br/><br/>*/}

@@ -15,7 +15,7 @@ export default function Toast(props: { title?: string, type: "error" | "warning"
             props.onDismiss()
         }
 
-    }, [isHovered, counter])
+    }, [isHovered, counter, props])
 
 
     switch (props.type) {

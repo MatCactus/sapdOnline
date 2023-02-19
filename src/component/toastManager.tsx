@@ -22,7 +22,7 @@ export function useToasts(): (title: string, type: "error" | "warning" | "succes
                 },
             ]);
         },
-        [toasts]
+        [toasts, setToasts]
     );
 }
 

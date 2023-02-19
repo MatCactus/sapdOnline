@@ -27,6 +27,7 @@ export default function Plateforme(props: { title: string, children: JSX.Element
                             initial={{ y: "100%" }}
                             animate={{ y: 0 }}
                             transition={{ duration: 0.5 }}
+                            exit={{ y: "100%" }}
                             className="fixed w-1/4 h-fit z-30 top-0 bottom-0 left-0 right-0 m-auto rounded-lg bg-lspd text-white p-4"
                         >
                             <p className="text-center text-3xl font-semibold p-4">{props.title}</p>

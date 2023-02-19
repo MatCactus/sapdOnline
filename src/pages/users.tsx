@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Logo from "../../public/sapd.png";
 import Banner from "../component/banner";
@@ -58,7 +58,7 @@ export default function User() {
                 return;
             }
             const Users = getUsers;
-            Users.push({ active: true, name: name, surname: surname, pon: pon, rank: rank, dept: dept, pp: pp, username: (surname[0] + name).toLowerCase() })
+            Users.push({ active: true, name: name, surname: surname, pon: pon, rank: rank, dept: dept, pp: pp ?? "https://img.freepik.com/premium-vector/police-avatar-icon-flat-color-style-vector-illustration_755164-6618.jpg", username: (surname[0] + name).toLowerCase() })
             setGetUsers(Users);
             createToast("Utilisateur créé avec succès", "success");
         })
@@ -89,50 +89,52 @@ export default function User() {
                     >
                         <i className="fas fa-plus text-6xl text-lspd" />
                     </motion.div>
-                    {
-                        showPlateforme &&
-                        <Plateforme toggleFunction={togglePlateforme} title="Ajouter un Agent" type="center">
-                            <div className="flex flex-col gap-2 px-6">
-                                <div className="flex flex-col">
-                                    <label className="py-1">Nom</label>
-                                    <input name="nom" placeholder="Nom" className="rounded-md pl-2 outline-none text-black" value={name} onChange={e => setName(e.target.value)} />
+                    <AnimatePresence>
+                        {
+                            showPlateforme &&
+                            <Plateforme toggleFunction={togglePlateforme} title="Ajouter un Agent" type="center">
+                                <div className="flex flex-col gap-2 px-6">
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Nom</label>
+                                        <input name="nom" placeholder="Nom" className="rounded-md pl-2 outline-none text-black" value={name} onChange={e => setName(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Prénom</label>
+                                        <input name="prenom" placeholder="Prénom" className="rounded-md pl-2 outline-none text-black" value={surname} onChange={e => setSurname(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Mot de Passe</label>
+                                        <input name="mdp" type="password" placeholder="Mot de Passe (Temporaire)" className="rounded-md pl-2 outline-none text-black" value={password} onChange={e => setPassword(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Date de Naissance</label>
+                                        <input name="dob" type="date" placeholder="Date de Naissance" className="rounded-md pl-2 outline-none text-black" value={dob} onChange={e => setDob(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Matricule</label>
+                                        <input name="matricule" placeholder="Matricule (Facultatif)" className="rounded-md pl-2 outline-none text-black" value={pon} onChange={e => setPon(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Grade</label>
+                                        <input name="grade" placeholder="Grade" className="rounded-md pl-2 outline-none text-black" value={rank} onChange={e => setRank(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Permissions</label>
+                                        <input name="perm" placeholder="Permissions" className="rounded-md pl-2 outline-none text-black" value={perm} onChange={e => setPerm(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Département</label>
+                                        <input name="departement" placeholder="Département" className="rounded-md pl-2 outline-none text-black" value={dept} onChange={e => setDept(e.target.value)} />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label className="py-1">Photo de Profil</label>
+                                        <input name="image" placeholder="Photo de Profil (Facultatif)" className="rounded-md pl-2 outline-none text-black" value={pp} onChange={e => setPp(e.target.value)} />
+                                    </div>
+                                    <button type="submit" className="border rounded-full text-white px-4 py-2 my-6" onClick={createUser}>Ajouter</button>
                                 </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Prénom</label>
-                                    <input name="prenom" placeholder="Prénom" className="rounded-md pl-2 outline-none text-black" value={surname} onChange={e => setSurname(e.target.value)} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Mot de Passe</label>
-                                    <input name="mdp" placeholder="Mot de Passe (Temporaire)" className="rounded-md pl-2 outline-none text-black" value={password} onChange={e => setPassword(e.target.value)} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Date de Naissance</label>
-                                    <input name="dob" placeholder="Date de Naissance" className="rounded-md pl-2 outline-none text-black" value={dob} onChange={e => setDob(e.target.value)} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Matricule</label>
-                                    <input name="matricule" placeholder="Matricule (Facultatif)" className="rounded-md pl-2 outline-none text-black" value={pon} onChange={e => setPon(e.target.value)} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Grade</label>
-                                    <input name="grade" placeholder="Grade" className="rounded-md pl-2 outline-none text-black" value={rank} onChange={e => setRank(e.target.value)} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Permissions</label>
-                                    <input name="perm" placeholder="Permissions" className="rounded-md pl-2 outline-none text-black" value={perm} onChange={e => setPerm(e.target.value)} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Département</label>
-                                    <input name="departement" placeholder="Département" className="rounded-md pl-2 outline-none text-black" value={dept} onChange={e => setDept(e.target.value)} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="py-1">Photo de Profil</label>
-                                    <input name="image" placeholder="Photo de Profil (Facultatif)" className="rounded-md pl-2 outline-none text-black" value={pp} onChange={e => setPp(e.target.value)} />
-                                </div>
-                                <button type="submit" className="border rounded-full text-white px-4 py-2 my-6" onClick={createUser}>Ajouter</button>
-                            </div>
-                        </Plateforme>
-                    }
+                            </Plateforme>
+                        }
+                    </AnimatePresence>
                 </div>
             </div>
         </>

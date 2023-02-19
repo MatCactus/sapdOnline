@@ -1,7 +1,7 @@
 import DBConnect from "./DBConnection";
 const bcrypt = require("bcrypt");
 
-export default async function (token: string): Promise<true | { message: string, httpCode: number }> {
+export default async function isLogged(token: string): Promise<true | { message: string, httpCode: number }> {
 
     const [headerHash, creationDate, username] = token.split(".");
 

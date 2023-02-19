@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 import { useToasts } from "./toastManager";
 import Tooltip from "./tooltip";
 
@@ -38,7 +39,7 @@ export default function UserProfile(props: { image: string, name: string, surnam
             whileHover={{ y: "-0.5rem", boxShadow: " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 17px 25px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset" }}
         >
             <div className={"flex flex-row gap-4"}>
-                <img src={props.image} alt="User Image" className="w-16 h-16 rounded-full object-cover" />
+                <Image src={props.image} alt="User Image" className="w-16 h-16 rounded-full object-cover" />
                 <div className="flex flex-row gap-4 text-lg">
                     <p className="self-center text-2xl">{props.matricule}</p>
                     <div className={"w-px h-full bg-white"}></div>
