@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useToasts } from "./toastManager";
 import Tooltip from "./tooltip";
 
 export default function UserProfile(props: { image: string, name: string, surname: string, matricule: string, dept: string, grade: string, active: boolean, username: string }) {
@@ -8,18 +9,31 @@ export default function UserProfile(props: { image: string, name: string, surnam
     const [tooltipDisplayState2, setTooltipDisplayState2] = useState(false);
     const [isActive, setIsActive] = useState(props.active);
 
-    useEffect(() => {
-        fetch("/api/toggleUser", {
+    const createToasts = useToasts();
+
+    const toggleActive = async (state?: boolean) => {
+        if (state == undefined)
+            return setIsActive(!isActive);
+
+        const res = await fetch("/api/toggleUser", {
             method: "POST",
             headers: {
                 authorization: localStorage.getItem("token") ?? ""
             },
-            body: JSON.stringify({ username: props.username, state: isActive })
+            body: JSON.stringify({ username: props.username, state: state })
         })
-    }, [isActive])
+        if (res.status == 401)
+            return createToasts("Vous n'êtes pas autorisé à faire cela!", "error")
+        if (res.status == 200) {
+            setIsActive(state);
+            createToasts("Le compte a été " + (state ? "activé" : "désactivé") + " avec succès !", "success");
+        }
+    }
 
     return (
-        <motion.div className="bg-lspd w-64 h-44 p-4 text-white rounded-lg"
+        <motion.div
+            className="w-64 h-44 p-4 text-white rounded-lg"
+            style={{ backgroundColor: { sapd: "#0B1D28", lspd: "#0f2940", bcso: "#617650" }[props.dept.toLowerCase() ?? "sapd"], opacity: isActive ? 1 : 0.6 }}
             initial={{ y: 0, boxShadow: " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset" }}
             whileHover={{ y: "-0.5rem", boxShadow: " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 17px 25px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset" }}
         >
@@ -28,11 +42,11 @@ export default function UserProfile(props: { image: string, name: string, surnam
                 <div className="flex flex-row gap-4 text-lg">
                     <p className="self-center text-2xl">{props.matricule}</p>
                     <div className={"w-px h-full bg-white"}></div>
-                    <p>{props.name}<br />{props.surname}</p>
+                    <p>{props.name.toUpperCase()}<br />{props.surname}</p>
                 </div>
             </div>
             <div className="flex flex-col mt-4">
-                <p>Dépatement : {props.dept}</p>
+                <p>Département : {props.dept}</p>
                 <p>Grade : {props.grade}</p>
             </div>
             <div className="flex flex-row items-center justify-end gap-2">
@@ -58,7 +72,7 @@ export default function UserProfile(props: { image: string, name: string, surnam
                     whileHover={{ scale: 1.1 }}
                     onMouseEnter={() => setTooltipDisplayState(true)}
                     onMouseLeave={() => setTooltipDisplayState(false)}
-                    onClick={() => { setTooltipDisplayState(false); setIsActive(!isActive) }}
+                    onClick={() => { setTooltipDisplayState(false); toggleActive(!isActive) }}
                 >
                     <AnimatePresence>
                         {

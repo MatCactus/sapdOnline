@@ -8,9 +8,9 @@ export default function Toast(props: { title?: string, type: "error" | "warning"
 
     useEffect(() => {
         if (!isHovered)
-            setTimeout(() => setCounter(counter + 1), 50);
+            setTimeout(() => setCounter(counter + 1), 3);
 
-        if (counter >= 250) {
+        if (counter >= 600) {
             setOpen(false);
             props.onDismiss()
         }
@@ -29,7 +29,7 @@ export default function Toast(props: { title?: string, type: "error" | "warning"
                             animate={{ x: "0" }}
                             transition={{
                                 type: "tween",
-                                duration: 0.5
+                                duration: 0.3
                             }}
                             exit={{ x: "15rem" }}
                             className="flex flex-row items-center rounded-lg p-2 max-w-xs border-l-4 border-l-red-400 bg-red-500 text-white font-bold cursor-pointer overflow-hidden select-none"
@@ -37,7 +37,7 @@ export default function Toast(props: { title?: string, type: "error" | "warning"
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                         >
-                            <span className="absolute left-0 bottom-0 h-0.75 bg-red-400 z-70 rounded-2xl" style={{ width: `${counter / 250 * 100}%` }} />
+                            <span className="absolute left-0 bottom-0 h-0.75 bg-red-400 z-70 rounded-2xl" style={{ width: `${counter / 600 * 100}%` }} />
                             <div className="flex items-center w-full h-full z-50 gap-2">
                                 <i className="fa-solid fa-circle-xmark fa-lg"></i>
                                 {props.title}
@@ -65,7 +65,7 @@ export default function Toast(props: { title?: string, type: "error" | "warning"
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                         >
-                            <span className="absolute left-0 bottom-0 h-0.75 bg-orange-400 z-70 rounded-2xl" style={{ width: `${counter / 250 * 100}%` }} />
+                            <span className="absolute left-0 bottom-0 h-0.75 bg-orange-400 z-70 rounded-2xl" style={{ width: `${counter / 600 * 100}%` }} />
                             <div className="flex items-center w-full h-full z-50 gap-2">
                                 <i className="fa-sharp fa-solid fa-circle-exclamation fa-lg"></i>
                                 {props.title}
@@ -93,7 +93,7 @@ export default function Toast(props: { title?: string, type: "error" | "warning"
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                         >
-                            <span className="absolute left-0 bottom-0 h-0.75 bg-green-400 z-70 rounded-2xl" style={{ width: `${counter / 250 * 100}%` }} />
+                            <span className="absolute left-0 bottom-0 h-0.75 bg-green-400 z-70 rounded-2xl" style={{ width: `${counter / 600 * 100}%` }} />
                             <div className="flex items-center w-full h-full z-50 gap-2">
                                 <i className="fa-solid fa-circle-check fa-lg"></i>
                                 {props.title}

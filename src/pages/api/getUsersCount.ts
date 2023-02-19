@@ -21,7 +21,7 @@ export default async function handler(
     const dbResUser: { dept: string }[] = await DBConnect(`SELECT dept FROM users WHERE username = \"${req.headers.authorization.split(".")[2]}\"`) as any;
 
     if (dbResUser[0].dept == "SAPD")
-        return res.status(200).json({ activeUsers: ((await DBConnect("SELECT COUNT(username) FROM users WHERE active = 1"))[0] as any)['COUNT(username)'], dept: "SAPD" });
+        return res.status(200).json({ activeUsers: ((await DBConnect("SELECT COUNT(username) FROM users WHERE active = 1 AND NOT username = \"admin\""))[0] as any)['COUNT(username)'], dept: "SAPD" });
 
-    return res.status(200).json({ activeUsers: ((await DBConnect(`SELECT COUNT(username) FROM users WHERE active = 1 AND dept = \"${dbResUser[0].dept}\"`))[0] as any)['COUNT(username)'], dept: dbResUser[0].dept })
+    return res.status(200).json({ activeUsers: ((await DBConnect(`SELECT COUNT(username) FROM users WHERE active = 1 AND dept = \"${dbResUser[0].dept}\" AND NOT username = \"admin\"`))[0] as any)['COUNT(username)'], dept: dbResUser[0].dept })
 }

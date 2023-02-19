@@ -31,16 +31,19 @@ module.exports = {
             backgroundColor: {
                 'sapd': "#0B1D28",
                 'lspd': "#0f2940",
-                'creme': "#F1E9DE"
+                'creme': "#F1E9DE",
+                'bcso': "#617650"
             },
             textColor: {
                 'creme': "#F1E9DE",
                 'sapd': "#0B1D28",
-                'lspd': "#0f2940"
+                'lspd': "#0f2940",
+                'bcso': "#617650"
             },
             borderColor: {
                 'sapd': "#0B1D28",
                 'lspd': "#0f2940",
+                'bcso': "#617650"
             },
         },
     },

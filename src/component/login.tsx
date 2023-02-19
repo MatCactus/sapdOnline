@@ -18,7 +18,7 @@ export default function LoginPopUp(props: { toggleFunction: (state?: boolean) =>
         fetch("/api/login", { method: "POST", body: JSON.stringify({ username: username, password: password }) }).then(async (res) => {
             const { message, token } = await res.json();
             if (message || !token) {
-                createToasts("Identifiants Incorrectes", "error")
+                createToasts("Identifiants Incorrects", "error")
                 return;
             }
 
