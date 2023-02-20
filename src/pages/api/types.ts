@@ -12,7 +12,47 @@ export interface User {
     dept: string
 }
 
-export type Users = User[]
+interface Record {
+    creationdate: Date,
+    author: {
+        name: string,
+        surname: string,
+        pon: string,
+    }
+    desc: string,
+    bills: string[],
+    jail: string[],
+}
+
+export interface CriminalRecordItems {
+    id: number,
+    name: string,
+    surname: string,
+    pon: string,
+    owner_name: string,
+    owner_surname: string,
+    docreation: Date,
+    records: number
+}
+
+export interface CriminalRecord {
+    name: string,
+    surname: string,
+    pon: string,
+    owner_name: string,
+    owner_surname: string,
+    owner_dob: Date,
+    owner_gender: string,
+    owner_phone: string,
+    docreation: Date,
+    records: Record[]
+};
+
+export type Users = User[];
+
+export type GetCriminalRecordsRes = CriminalRecordItems[];
+
+export type GetCriminalRecordRes = CriminalRecord[];
 
 export type LoginRes = { message: string } | { token: string };
 
