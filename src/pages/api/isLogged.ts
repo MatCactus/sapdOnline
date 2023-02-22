@@ -10,14 +10,12 @@ export default async function handler(
     if (req.method != "GET")
         return res.status(405).json({ message: "Not allowed" });
 
-    const headers = req.headers
-
-    if (!headers.authorization)
+    if (!req.headers.authorization)
         return res.status(403).json({ message: "Not allowed" });
 
-    const result = await isLogged(headers.authorization)
+    const result = await isLogged(req.headers.authorization);
 
-    if (typeof result == 'boolean')
+    if (result == true)
         return res.status(200).json({ message: "Connected!" });
 
     return res.status(result.httpCode).json({ message: result.message })

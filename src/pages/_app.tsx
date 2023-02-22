@@ -60,6 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
+                        <p className={"absolute top-2 left-2 text-lg font-semibold"}>Site en Alpha V0.5</p>
                         <Component {...pageProps} />
                     </motion.div>
                 }

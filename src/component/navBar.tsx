@@ -24,13 +24,13 @@ export default function NavBar(props: any) {
                     <NavBarButton tooltip="Tableau de Bord" pagePath="/dashboard">
                         <i className="fas fa-house fa-lg" />
                     </NavBarButton>
-                    <NavBarButton tooltip="Recherche Citoyen" pagePath="/research-citizen">
+                    <NavBarButton tooltip="Recherche Citoyen" pagePath="/research-citizen" disabled={true}>
                         <i className="fa-solid fa-magnifying-glass fa-lg" />
                     </NavBarButton>
-                    <NavBarButton tooltip="Recensement Citoyen" pagePath="/census">
+                    <NavBarButton tooltip="Recensement Citoyen" pagePath="/census" disabled={true}>
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>
-                    <NavBarButton tooltip="Déposition de Plainte" pagePath="/complaint">
+                    <NavBarButton tooltip="Déposition de Plainte" pagePath="/complaint" disabled={true}>
                         <i className="fa-solid fa-file fa-lg" />
                     </NavBarButton>
                     <NavBarButton tooltip="Dispatch" target="_blank" pagePath="https://trello.com/b/47gNKwnX/dispatch-lspd-7life">
@@ -39,7 +39,7 @@ export default function NavBar(props: any) {
                     <NavBarButton tooltip="Casiers Judiciraire" pagePath="/criminal-records">
                         <i className="fa-regular fa-folder-open fa-lg" />
                     </NavBarButton>
-                    <NavBarButton tooltip="Éditer un Rapport" pagePath="/report">
+                    <NavBarButton tooltip="Éditer un Rapport" pagePath="/report" disabled={true}>
                         <i className="fa-regular fa-clipboard fa-lg" />
                     </NavBarButton>
                     <NavBarButton tooltip="Lois" target="_blank" pagePath="https://docs.google.com/spreadsheets/d/1fzqRlpxPR8dKqVmzsfuvDuI5Awniv_xrhv1ogqk2jrA/edit?usp=sharing">
@@ -53,7 +53,7 @@ export default function NavBar(props: any) {
                     </NavBarButton>
                 </div>
                 <div className="flex flex-col justify-end items-center gap-y-6 md:gap-y-8 h-full">
-                    <NavBarButton tooltip="Voir son profil" pagePath="/profile">
+                    <NavBarButton tooltip="Voir son profil" pagePath="/profile" disabled={true}>
                         <i className="fa-solid fa-user fa-lg" />
                     </NavBarButton>
                     <NavBarButton tooltip="Se déconnecter" pagePath="/" onClick={logOut}>

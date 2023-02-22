@@ -4,12 +4,31 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Tooltip from "./tooltip";
 
-export default function NavBarButton(props: { children: JSX.Element, target?: string, pagePath: string, tooltip: string, onClick?: () => any }) {
+export default function NavBarButton(props: { children: JSX.Element, target?: string, pagePath: string, tooltip: string, onClick?: () => any, disabled?: boolean }) {
     const router = useRouter()
     const [tooltipDisplayState, setTooltipDisplayState] = useState(false);
 
     if (router.pathname == props.pagePath)
         return <></>
+
+    if (props.disabled) {
+        return (
+            <motion.div
+                className="select-none opacity-40"
+                onMouseEnter={() => setTooltipDisplayState(true)}
+                onMouseLeave={() => setTooltipDisplayState(false)}
+                onClick={() => setTooltipDisplayState(false)}
+            >
+                <AnimatePresence>
+                    {
+                        tooltipDisplayState &&
+                        <Tooltip position={{ x: "4rem" }}>{props.tooltip}</Tooltip>
+                    }
+                </AnimatePresence>
+                {props.children}
+            </motion.div >
+        )
+    }
 
     if (props.target)
         return (

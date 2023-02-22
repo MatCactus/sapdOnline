@@ -19,9 +19,9 @@ interface Record {
         surname: string,
         pon: string,
     }
-    desc: string,
+    facts: string[],
     bills: string[],
-    jail: string[],
+    jail: string,
 }
 
 export interface CriminalRecordItems {
@@ -32,10 +32,11 @@ export interface CriminalRecordItems {
     owner_name: string,
     owner_surname: string,
     docreation: Date,
+    photos: { title: string, photo: string, recordEntryId?: number }[],
     records: number
 }
 
-export interface CriminalRecord {
+export interface GetCriminalRecordRes {
     name: string,
     surname: string,
     pon: string,
@@ -45,14 +46,13 @@ export interface CriminalRecord {
     owner_gender: string,
     owner_phone: string,
     docreation: Date,
-    records: Record[]
+    photos: { title: string, photo: string, recordEntryId?: number }[],
+    record: Record[]
 };
 
 export type Users = User[];
 
 export type GetCriminalRecordsRes = CriminalRecordItems[];
-
-export type GetCriminalRecordRes = CriminalRecord[];
 
 export type LoginRes = { message: string } | { token: string };
 
